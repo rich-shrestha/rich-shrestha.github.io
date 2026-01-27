@@ -137,7 +137,6 @@
     font-weight: 800;
     letter-spacing: -1px;
     color: var(--text-primary);
-    animation: fadeInUp 0.8s ease-out;
   }
   
   .hero h2 {
@@ -145,7 +144,6 @@
     color: var(--accent);
     margin-bottom: 1.5rem;
     font-weight: 600;
-    animation: fadeInUp 0.8s ease-out 0.2s both;
   }
   
   .hero p {
@@ -154,7 +152,6 @@
     margin-bottom: 3rem;
     line-height: 1.8;
     max-width: 700px;
-    animation: fadeInUp 0.8s ease-out 0.4s both;
   }
   
   /* BUTTON */
@@ -168,7 +165,6 @@
     display: inline-block;
     transition: all 0.3s;
     box-shadow: 0 4px 15px var(--accent-glow);
-    animation: fadeInUp 0.8s ease-out 0.6s both;
     position: relative;
     overflow: hidden;
   }
@@ -309,18 +305,6 @@
     font-size: 0.9rem;
   }
   
-  /* ANIMATIONS */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
   /* MOBILE RESPONSIVE */
   @media (max-width: 768px) {
     body {
@@ -388,13 +372,13 @@
     }
   
     .social-links a {
-        width: 44px;
-        height: 44px;
-        padding: 0.65rem;
-      }
-      
-      .social-links a svg {
-        width: 20px;
-        height: 20px;
-      }
+      width: 44px;
+      height: 44px;
+      padding: 0.65rem;
+    }
+    
+    .social-links a svg {
+      width: 20px;
+      height: 20px;
+    }
   }
