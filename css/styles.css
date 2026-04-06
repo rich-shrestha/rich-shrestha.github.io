@@ -128,8 +128,8 @@ body::before {
 .hero {
   min-height: 85vh;
   display: flex;
-  align-items: center;
-  padding: 4rem 0;
+  align-items: flex-start;
+  padding: 4.5rem 0 5rem;
   overflow: hidden;
 }
 
@@ -150,6 +150,7 @@ body::before {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  text-align: left;
 }
 
 .hero-narrow {
@@ -159,12 +160,12 @@ body::before {
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: start;
 }
 
 .hero-copy {
-  padding: 1rem 0;
+  padding: 0.5rem 0 0;
 }
 
 .hero-aside {
@@ -257,6 +258,88 @@ body::before {
   margin-top: 0.9rem;
   position: relative;
   z-index: 1;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(280px, 0.78fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.page-main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.page-aside {
+  display: grid;
+  gap: 1rem;
+  position: sticky;
+  top: 110px;
+}
+
+.meta-card {
+  border-radius: 18px;
+  padding: 1.35rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(45, 122, 79, 0.12);
+  box-shadow: var(--shadow-soft);
+}
+
+.meta-card-dark {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.meta-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.meta-list {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+  color: var(--text-secondary);
+}
+
+.meta-list li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.meta-list strong {
+  color: var(--text-primary);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.stat {
+  padding: 0.9rem;
+  border-radius: 14px;
+  background: rgba(45, 122, 79, 0.06);
+  border: 1px solid rgba(45, 122, 79, 0.12);
+}
+
+.stat span {
+  display: block;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.35rem;
+  color: var(--text-secondary);
+}
+
+.stat strong {
+  font-size: 1.3rem;
+  color: var(--text-primary);
 }
 
 .hero h1 {
@@ -428,6 +511,7 @@ body::before {
   background: #1a1a1a;
   color: #ffffff;
   padding: 4.5rem 0;
+  margin-top: 1rem;
 }
 
 .build-strip-inner {
@@ -576,6 +660,13 @@ body::before {
 
 .projects-intro {
   max-width: 70ch;
+}
+
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(45, 122, 79, 0), rgba(45, 122, 79, 0.22), rgba(45, 122, 79, 0));
+  margin: 0.5rem 0 0.75rem;
 }
 
 .experience-stack {
@@ -762,6 +853,14 @@ body::before {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-aside {
+    position: static;
   }
 
   .hero p {
