@@ -210,21 +210,9 @@ body::before {
   border-left: 4px solid var(--accent);
 }
 
-.surface-card-dark {
-  background: rgba(26, 26, 26, 0.95);
-  border-color: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-}
-
-.surface-card-dark .card-label,
-.surface-card-dark .signal-list {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.surface-card-dark .skill-tag {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.92);
+.surface-card-soft {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(45, 122, 79, 0.14);
 }
 
 .signal-list {
@@ -287,15 +275,19 @@ body::before {
   box-shadow: var(--shadow-soft);
 }
 
-.meta-card-dark {
-  background: #1a1a1a;
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.08);
+.meta-card-soft {
+  background: rgba(45, 122, 79, 0.05);
+  color: var(--text-primary);
+  border-color: rgba(45, 122, 79, 0.14);
 }
 
 .meta-card h3 {
   font-size: 1rem;
   margin-bottom: 0.8rem;
+}
+
+.meta-card-soft h3 {
+  color: var(--text-primary);
 }
 
 .meta-list {
@@ -340,6 +332,10 @@ body::before {
 .stat strong {
   font-size: 1.3rem;
   color: var(--text-primary);
+}
+
+.meta-card-soft .stat {
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .hero h1 {
@@ -508,10 +504,14 @@ body::before {
 }
 
 .build-strip {
-  background: #1a1a1a;
-  color: #ffffff;
-  padding: 4.5rem 0;
+  background:
+    linear-gradient(135deg, rgba(45, 122, 79, 0.08), rgba(255, 255, 255, 0.86)),
+    rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  padding: 4rem 0;
   margin-top: 1rem;
+  border-top: 1px solid rgba(45, 122, 79, 0.08);
+  border-bottom: 1px solid rgba(45, 122, 79, 0.08);
 }
 
 .build-strip-inner {
@@ -539,9 +539,9 @@ body::before {
   text-align: center;
   padding: 1.4rem 1rem;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(45, 122, 79, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .build-icon {
@@ -552,7 +552,7 @@ body::before {
 .build-item span:last-child {
   font-weight: 600;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--text-primary);
 }
 
 .content-stack {
