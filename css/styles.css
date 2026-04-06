@@ -755,6 +755,26 @@ body::before {
   line-height: 1.75;
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.project-links a {
+  text-decoration: none;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(45, 122, 79, 0.25);
+  padding-bottom: 0.1rem;
+}
+
+.project-links a:hover {
+  border-bottom-color: var(--accent);
+}
+
 .projects-intro {
   max-width: 70ch;
 }
