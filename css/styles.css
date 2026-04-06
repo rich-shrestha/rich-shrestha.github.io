@@ -509,26 +509,6 @@ body::before {
   margin: 2rem 0;
 }
 
-.newsletter-callout {
-  margin-top: 2rem;
-  background: rgba(45, 122, 79, 0.06);
-  border: 1px solid rgba(45, 122, 79, 0.2);
-  border-radius: 16px;
-  padding: 2.1rem;
-}
-
-.newsletter-callout h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
-  color: var(--text-primary);
-}
-
-.newsletter-callout p {
-  margin-bottom: 1.25rem;
-  color: var(--text-secondary);
-  max-width: 60ch;
-}
-
 .project-card {
   background: var(--bg-card);
   border-radius: 20px;
