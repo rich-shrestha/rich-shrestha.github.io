@@ -537,6 +537,10 @@ body::after {
   line-height: 1;
 }
 
+.section-header .eyebrow {
+  margin-bottom: 0.45rem;
+}
+
 .section-lede {
   max-width: 34rem;
   color: var(--text-secondary);
