@@ -1006,7 +1006,7 @@ body::after {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 70px;
+    padding-top: 130px;
   }
 
   .navbar {
@@ -1029,7 +1029,7 @@ body::after {
 
   .hero {
     min-height: 58vh;
-    padding: 1.5rem 0 2rem;
+    padding: 2rem 0 2rem;
   }
 
   .page-flow {
