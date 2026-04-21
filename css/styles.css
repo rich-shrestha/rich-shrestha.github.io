@@ -402,6 +402,24 @@ body::after {
   max-width: 40rem;
 }
 
+.about-hero-subtitle {
+  background: none;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  color: var(--tone-ink);
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.home-hero-subtitle {
+  max-width: 42rem;
+}
+
+.home-hero-eyebrow {
+  max-width: 100%;
+}
+
 .hero p {
   color: var(--text-secondary);
   font-size: 1.2rem;
@@ -1032,6 +1050,13 @@ body::after {
 
   .hero h1 {
     max-width: none;
+  }
+
+  .home-hero-eyebrow {
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+    line-height: 1.45;
+    white-space: normal;
   }
 
   .hero-cta {
