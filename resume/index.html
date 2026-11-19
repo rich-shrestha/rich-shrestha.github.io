@@ -39,20 +39,18 @@
       }
 
       .toolbar .dl {
-        text-decoration: none;
         display: inline-block;
+        text-decoration: none;
         font: 600 0.8rem var(--sans);
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--accent);
-        background: transparent;
-        border: 1px solid var(--line);
+        color: #fff;
+        background: var(--accent);
         border-radius: 999px;
-        padding: 0.55rem 1.1rem;
-        cursor: pointer;
+        padding: 0.6rem 1.2rem;
       }
 
-      .toolbar .dl:hover { border-color: var(--accent); }
+      .toolbar .dl:hover { filter: brightness(1.1); }
 
       .resume {
         max-width: 860px;
@@ -73,9 +71,6 @@
 
       .contact {
         margin-top: 0.85rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.35rem 1.25rem;
         font-size: 0.92rem;
         color: var(--muted);
       }
@@ -100,7 +95,7 @@
 
       .job + .job { margin-top: 1.75rem; }
 
-      .job-head {
+      .row {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
@@ -109,49 +104,26 @@
       }
 
       .company { font-weight: 700; font-size: 1.02rem; }
-      .company span { font-weight: 500; color: var(--muted); }
-      .where { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
-
-      .role-row {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-top: 0.1rem;
-      }
-
+      .where, .dates { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+      .where { text-transform: uppercase; letter-spacing: 0.04em; }
       .role { font-family: var(--serif); font-style: italic; font-size: 1.08rem; }
-      .dates { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
 
       ul.bullets {
-        list-style: none;
         margin-top: 0.7rem;
+        padding-left: 1.1rem;
         display: grid;
         gap: 0.5rem;
       }
 
       ul.bullets li {
-        position: relative;
-        padding-left: 1.1rem;
         color: var(--muted);
         font-size: 0.95rem;
+        padding-left: 0.2rem;
       }
 
-      ul.bullets li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.68em;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: var(--accent);
-      }
-
-      ul.bullets li strong { color: var(--ink); }
-
+      ul.bullets li::marker { color: var(--accent); }
+      ul.bullets li strong, .skills strong { color: var(--ink); }
       .skills { color: var(--muted); font-size: 0.95rem; }
-      .skills strong { color: var(--ink); }
 
       @media (max-width: 640px) {
         body { padding: 1rem 1rem 2.5rem; }
@@ -160,18 +132,27 @@
         .where, .dates { white-space: normal; }
       }
 
+      /* Printing the page matches the downloadable one-page PDF */
       @media print {
-        @page { margin: 0.5in; }
-        body { background: #fff; padding: 0; font-size: 10pt; }
+        @page { size: Letter; margin: 0.6in 0.6in 0.5in; }
+        body { background: #fff; padding: 0; color: #000; font-family: "Times New Roman", Times, serif; font-size: 10.5pt; line-height: 1.22; }
         .toolbar { display: none; }
-        .resume { box-shadow: none; padding: 0; max-width: none; border-radius: 0; }
-        header h1 { font-size: 26pt; }
-        section { margin-top: 1.1rem; }
-        .job + .job { margin-top: 0.9rem; }
-        ul.bullets { gap: 0.2rem; margin-top: 0.35rem; }
-        ul.bullets li, .skills { font-size: 9.5pt; }
-        .job { break-inside: avoid; }
-        a { color: inherit; }
+        .resume { box-shadow: none; padding: 0; max-width: none; border-radius: 0; background: #fff; }
+        header { text-align: center; }
+        header h1 { font-family: inherit; font-size: 17pt; font-weight: bold; letter-spacing: 0; }
+        .contact { margin-top: 2pt; font-size: inherit; color: #000; }
+        .contact a { color: #1155cc; text-decoration: underline; }
+        section { margin-top: 12pt; }
+        h2 { font-size: 12pt; font-weight: normal; letter-spacing: 0; text-transform: uppercase; color: #000; border-bottom: 1px solid #000; padding-bottom: 0; margin-bottom: 2pt; }
+        .summary, .skills, ul.bullets li { color: #000; font-size: inherit; max-width: none; }
+        .job + .job { margin-top: 9pt; }
+        .row { flex-wrap: nowrap; gap: 0; }
+        .company, .where { font-weight: bold; font-size: inherit; color: #000; letter-spacing: 0; }
+        .role, .dates { font-family: inherit; font-style: italic; font-size: inherit; color: #000; }
+        ul.bullets { margin-top: 0; padding-left: 13pt; display: block; }
+        ul.bullets li { padding-left: 0; }
+        ul.bullets li::marker { color: #000; }
+        .skills strong, ul.bullets li strong { color: #000; }
       }
     </style>
   </head>
@@ -183,12 +164,7 @@
     <main class="resume">
       <header>
         <h1>Rich Shrestha</h1>
-        <div class="contact">
-          <span>New York, NY 10128</span>
-          <a href="mailto:richshre@gmail.com">richshre@gmail.com</a>
-          <a href="https://rich-shrestha.github.io">rich-shrestha.github.io</a>
-          <a href="https://www.linkedin.com/in/rich-shrestha/" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
+        <div class="contact">New York, NY 10128 | <a href="mailto:richshre@gmail.com">richshre@gmail.com</a> | <a href="https://rich-shrestha.github.io">rich-shrestha.github.io</a></div>
       </header>
 
       <section>
@@ -200,14 +176,8 @@
         <h2>Experience</h2>
 
         <div class="job">
-          <div class="job-head">
-            <div class="company">Twin Health <span>· Metabolic Health Solutions</span></div>
-            <div class="where">New York, NY</div>
-          </div>
-          <div class="role-row">
-            <div class="role">Growth Data Analyst</div>
-            <div class="dates">2025 – Present</div>
-          </div>
+          <div class="row"><span class="company">Twin Health – Metabolic Health Solutions</span><span class="where">New York, NY</span></div>
+          <div class="row"><span class="role">Growth Data Analyst</span><span class="dates">2025 - Present</span></div>
           <ul class="bullets">
             <li>Serve as marketing analytics lead, owning key dashboards and delivering weekly/monthly business reviews while establishing authoritative reporting for acquisition and partner marketing initiatives</li>
             <li>Since May 2026, own marketing operations for ~1.5M monthly email and direct mail sends, spanning audience operations, optimization, and deployment, including the data layer (segmentation, technical accuracy, and QA)</li>
@@ -218,14 +188,8 @@
         </div>
 
         <div class="job">
-          <div class="job-head">
-            <div class="company">Starry <span>· Internet Service Provider (Acquired by Verizon)</span></div>
-            <div class="where">New York, NY</div>
-          </div>
-          <div class="role-row">
-            <div class="role">Growth Operations Associate</div>
-            <div class="dates">2023 – 2025</div>
-          </div>
+          <div class="row"><span class="company">STARRY – Internet Service Provider (Acquired by Verizon)</span><span class="where">New York, NY</span></div>
+          <div class="row"><span class="role">Growth Operations Associate</span><span class="dates">2023 – 2025</span></div>
           <ul class="bullets">
             <li>Advised and executed enterprise GTM strategy, driving an average monthly MRR increase of ~54% since launch</li>
             <li>Optimized the lead-to-customer activation journey, identifying revenue growth and operational efficiency opportunities</li>
@@ -236,14 +200,8 @@
         </div>
 
         <div class="job">
-          <div class="job-head">
-            <div class="company">West Monroe <span>· Technology Strategy Consulting</span></div>
-            <div class="where">New York, NY</div>
-          </div>
-          <div class="role-row">
-            <div class="role">Mergers &amp; Acquisitions Consultant</div>
-            <div class="dates">2022 – 2023</div>
-          </div>
+          <div class="row"><span class="company">WEST MONROE – Technology Strategy Consulting</span><span class="where">New York, NY</span></div>
+          <div class="row"><span class="role">Mergers &amp; Acquisitions Consultant</span><span class="dates">2022 – 2023</span></div>
           <ul class="bullets">
             <li>Steered sell-side analysis of Cardinal Logistics (acquired by Ryder), showcasing its repeatable customer onboarding process and configurable tech stack while advising on executive technology decisions</li>
             <li>Assessed product development and management methodology of $300M revenue health literacy PortCo to depict a client’s unique microsite architecture strategy, employee empowerment, and technology expenditure approach</li>
@@ -254,13 +212,13 @@
 
       <section>
         <h2>Skills</h2>
-        <p class="skills"><strong>Technical:</strong> SQL, AI Prompt Engineering, BI Tools (Tableau, Looker, LightDash), CRMs (Salesforce, HubSpot), Digital Analytics (GA4, Mixpanel), Paid/Organic Social (Meta, Google, LinkedIn), Sales Engagement (Apollo, Outreach)</p>
+        <p class="skills"><strong>Technical Skills:</strong> SQL, AI Prompt Engineering, BI Tools (Tableau; Looker; LightDash), CRMs (SFDC; HubSpot), Digital Analytics (GA4; Mixpanel), Paid/Organic Social (Meta; Google; LinkedIn), Sales Engagement (Apollo; Outreach)</p>
       </section>
 
       <section>
         <h2>Projects</h2>
         <ul class="bullets">
-          <li><strong>SplitCheck</strong>: AI receipt and bank statement parser that splits expenses; handles HEIC iPhone photos with server-side conversion (Vercel, Anthropic API, Redis). <a href="https://split-check-theta.vercel.app/" target="_blank" rel="noreferrer" style="color: var(--accent)">Try it</a></li>
+          <li><strong>SplitCheck</strong> — AI receipt and bank statement parser that splits expenses; handles HEIC iPhone photos with server-side conversion (Vercel, Anthropic API, Redis)</li>
         </ul>
       </section>
     </main>
