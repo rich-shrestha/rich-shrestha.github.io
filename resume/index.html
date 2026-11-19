@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Rich Shrestha | Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f5f0e6;
+        --card: #fffdf9;
+        --ink: #161512;
+        --muted: #605a52;
+        --accent: #2f7a57;
+        --line: rgba(47, 122, 87, 0.16);
+        --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --serif: "Newsreader", Georgia, serif;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        padding: 3rem 1rem 4rem;
+      }
+
+      .toolbar {
+        max-width: 860px;
+        margin: 0 auto 1rem;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .toolbar button {
+        font: 600 0.8rem var(--sans);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: transparent;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.55rem 1.1rem;
+        cursor: pointer;
+      }
+
+      .toolbar button:hover { border-color: var(--accent); }
+
+      .resume {
+        max-width: 860px;
+        margin: 0 auto;
+        background: var(--card);
+        border-radius: 24px;
+        padding: 3.25rem 3.5rem;
+        box-shadow: 0 10px 30px rgba(47, 34, 16, 0.07);
+      }
+
+      header h1 {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 3rem;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .contact {
+        margin-top: 0.85rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 1.25rem;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .contact a { color: var(--accent); text-decoration: none; }
+      .contact a:hover { text-decoration: underline; }
+
+      section { margin-top: 2.25rem; }
+
+      h2 {
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 1.1rem;
+      }
+
+      .summary { color: var(--muted); max-width: 70ch; }
+
+      .job + .job { margin-top: 1.75rem; }
+
+      .job-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .company { font-weight: 700; font-size: 1.02rem; }
+      .company span { font-weight: 500; color: var(--muted); }
+      .where { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+
+      .role-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 0.1rem;
+      }
+
+      .role { font-family: var(--serif); font-style: italic; font-size: 1.08rem; }
+      .dates { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+
+      ul.bullets {
+        list-style: none;
+        margin-top: 0.7rem;
+        display: grid;
+        gap: 0.5rem;
+      }
+
+      ul.bullets li {
+        position: relative;
+        padding-left: 1.1rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      ul.bullets li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      ul.bullets li strong { color: var(--ink); }
+
+      .skills { color: var(--muted); font-size: 0.95rem; }
+      .skills strong { color: var(--ink); }
+
+      @media (max-width: 640px) {
+        body { padding: 1rem 1rem 2.5rem; }
+        .resume { padding: 1.75rem 1.25rem; border-radius: 18px; }
+        header h1 { font-size: 2.3rem; }
+        .where, .dates { white-space: normal; }
+      }
+
+      @media print {
+        @page { margin: 0.5in; }
+        body { background: #fff; padding: 0; font-size: 10pt; }
+        .toolbar { display: none; }
+        .resume { box-shadow: none; padding: 0; max-width: none; border-radius: 0; }
+        header h1 { font-size: 26pt; }
+        section { margin-top: 1.1rem; }
+        .job + .job { margin-top: 0.9rem; }
+        ul.bullets { gap: 0.2rem; margin-top: 0.35rem; }
+        ul.bullets li, .skills { font-size: 9.5pt; }
+        .job { break-inside: avoid; }
+        a { color: inherit; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button type="button" onclick="window.print()">Save as PDF</button>
+    </div>
+
+    <main class="resume">
+      <header>
+        <h1>Rich Shrestha</h1>
+        <div class="contact">
+          <span>New York, NY</span>
+          <a href="mailto:richshre@gmail.com">richshre@gmail.com</a>
+          <a href="https://rich-shrestha.github.io">rich-shrestha.github.io</a>
+          <a href="https://www.linkedin.com/in/rich-shrestha/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </header>
+
+      <section>
+        <h2>Summary</h2>
+        <p class="summary">Strategy and operations professional with expertise in delivering executive insights, stakeholder alignment, and operational excellence. Transforms ambiguity into specificity within fast-paced environments. Leads growth strategies through rigorous prioritization resulting in successful product launches, clear roadmaps, and data-driven processes. Builds AI-powered tools, bridging analytical thinking with hands-on product development.</p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="company">Twin Health <span>· Metabolic Health Solutions</span></div>
+            <div class="where">New York, NY</div>
+          </div>
+          <div class="role-row">
+            <div class="role">Growth Data Analyst</div>
+            <div class="dates">2025 – Present</div>
+          </div>
+          <ul class="bullets">
+            <li>Serve as marketing analytics lead, owning key dashboards and delivering weekly/monthly business reviews while establishing authoritative reporting for acquisition, partner, lifecycle, B2B, and brand marketing initiatives</li>
+            <li>Drove highest-ever monthly registrations for the company (June 2026), including a 40% improvement over a historically underperforming large health plan partner’s previous best month, representing an estimated $43M in potential lifetime value</li>
+            <li>Led cross-functional project with Data Engineering and direct mail vendor to introduce delivery-date tracking for the first time, enabling accurate forecasting for the company’s highest-performing acquisition channel</li>
+            <li>Developed a major retailer’s 2026 communications strategy investigating historic data to drive $12.8M in revenue while establishing data-backed send frequency framework balancing partner preferences with conversion efficacy</li>
+            <li>Led campaign analysis and dashboarding for a newly formed acquisition tiger team, then coached and onboarded the permanent acquisition team to improve operations and testing processes</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="company">Starry <span>· Internet Service Provider (Acquired by Verizon)</span></div>
+            <div class="where">New York, NY</div>
+          </div>
+          <div class="role-row">
+            <div class="role">Growth Operations Associate</div>
+            <div class="dates">2023 – 2025</div>
+          </div>
+          <ul class="bullets">
+            <li>Advised and executed enterprise GTM strategy, driving an average monthly MRR increase of ~54% since launch</li>
+            <li>Optimized the lead-to-customer activation journey, identifying revenue growth and operational efficiency opportunities</li>
+            <li>Managed 9 SOPs and 4 project plans from inception across 5 departments to introduce new tools, define data ingestion workflows, cross-functional collaboration, and data visualization</li>
+            <li>Provided weekly and monthly executive-level reporting on B2C and B2B customer outcomes to key internal leaders and investors, highlighting positive trends in ARPU, cumulative MRC &amp; NRC, and subscriber growth</li>
+            <li>Created a dynamic Looker dashboard that assisted in retaining 71% of subscriber revenue affected by the end of the Affordable Connectivity Program (federal subsidy to reduce internet access costs)</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="company">West Monroe <span>· Technology Strategy Consulting</span></div>
+            <div class="where">New York, NY</div>
+          </div>
+          <div class="role-row">
+            <div class="role">Mergers &amp; Acquisitions Consultant</div>
+            <div class="dates">2022 – 2023</div>
+          </div>
+          <ul class="bullets">
+            <li>Steered sell-side analysis of Cardinal Logistics (acquired by Ryder) exhibiting their repeatable customer onboarding process and configurable technology stack, while advising the strategic direction of executive-level technology decisions</li>
+            <li>Assessed product development and management methodology of $300M revenue health literacy PortCo to depict a client’s unique microsite architecture strategy, employee empowerment, and technology expenditure approach</li>
+            <li>Delivered 8 tech diligences within financial services (Kestra Holdings, Oak Hill Capital; World Insurance Associates, Goldman Sachs Asset Management), healthcare, entertainment (ASM Global, Legends), and transportation logistics</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <p class="skills"><strong>Technical:</strong> SQL, AI Prompt Engineering, BI Tools (Tableau, Looker, LightDash), CRMs (Salesforce, HubSpot), Digital Analytics (GA4, Mixpanel), Paid/Organic Social (Meta, Google, LinkedIn)</p>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <ul class="bullets">
+          <li><strong>SplitCheck</strong>: AI receipt and bank statement parser that splits expenses; handles HEIC iPhone photos with server-side conversion (Vercel, Anthropic API, Redis). <a href="https://split-check-theta.vercel.app/" target="_blank" rel="noreferrer" style="color: var(--accent)">Try it</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
